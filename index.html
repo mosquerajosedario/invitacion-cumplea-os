@@ -3,43 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interfaz Móvil</title>
+  <title>Interfaz Mejorada</title>
   <style>
     /* Estilos CSS */
     body {
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
-      padding: 10px;
-    }
-    h1 {
-      text-align: center;
+      margin: 0;
+      padding: 0;
     }
     .container {
-      background-color: #fff;
-      border-radius: 5px;
+      background-image: url('https://static.vecteezy.com/system/resources/previews/001/819/529/non_2x/football-match-versus-teams-intro-sport-background-championship-competition-final-poster-flat-style-illustration-vector.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .content {
+      background-color: rgba(255, 255, 255, 0.8);
       padding: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      text-align: center;
     }
-    .input-group {
-      margin-bottom: 10px;
+    h1 {
+      font-size: 32px;
+      margin: 0;
+      padding: 10px;
+      color: #333;
     }
-    .input-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    .input-group input {
-      width: 100%;
-      padding: 5px;
+    p {
       font-size: 16px;
-      border-radius: 3px;
-      border: 1px solid #ccc;
+      margin: 0;
+      padding: 10px;
+      color: #333;
     }
     .btn {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      text-align: center;
+      display: inline-block;
+      padding: 10px 20px;
       background-color: #4caf50;
       color: #fff;
       font-weight: bold;
@@ -53,12 +55,12 @@
   </style>
 </head>
 <body>
-    <a href="https://www.google.com.ar/maps/place/C.+300+1387,+Gral.+Pico,+La+Pampa/@-35.6615772,-63.7781903,17z/data=!3m1!4b1!4m6!3m5!1s0x95c362a9ad4eda33:0x94015c050b2c229!8m2!3d-35.6615772!4d-63.7781903!16s%2Fg%2F11thhwh8zp" class="btn">Si voy</a>
-
-    <br>
-
-
-    <a href="https://www.youtube.com/watch?v=5Kv4n18IGmo" class="btn">No voy</a>
+  <div class="container">
+    <div class="content">
+      <h1>Football Match</h1>
+      <p>Versus Teams Championship</p>
+      <a href="#" class="btn">Comenzar</a>
+    </div>
   </div>
 </body>
 </html>
