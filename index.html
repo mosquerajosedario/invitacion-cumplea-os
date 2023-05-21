@@ -3,62 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interfaz Móvil</title>
+  <title>Juego del Bulldog Francés</title>
   <style>
-    /* Estilos CSS */
     body {
       font-family: Arial, sans-serif;
+      text-align: center;
       background-color: #f2f2f2;
-      padding: 10px;
     }
     h1 {
-      text-align: center;
+      color: #333;
     }
     .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
       background-color: #fff;
       border-radius: 5px;
-      padding: 20px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .input-group {
-      margin-bottom: 10px;
+    #bulldog {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      transition: transform 0.2s;
     }
-    .input-group label {
-      display: block;
-      margin-bottom: 5px;
+    .message {
+      margin-top: 20px;
       font-weight: bold;
-    }
-    .input-group input {
-      width: 100%;
-      padding: 5px;
-      font-size: 16px;
-      border-radius: 3px;
-      border: 1px solid #ccc;
-    }
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      text-align: center;
-      background-color: #4caf50;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 3px;
-      transition: background-color 0.3s;
-    }
-    .btn:hover {
-      background-color: #45a049;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
-    <a href="https://www.google.com.ar/maps/place/C.+300+1387,+Gral.+Pico,+La+Pampa/@-35.6615772,-63.7781903,17z/data=!3m1!4b1!4m6!3m5!1s0x95c362a9ad4eda33:0x94015c050b2c229!8m2!3d-35.6615772!4d-63.7781903!16s%2Fg%2F11thhwh8zp" class="btn">Si voy</a>
-
-    <br>
-
-
-    <a href="https://www.youtube.com/watch?v=5Kv4n18IGmo" class="btn">No voy</a>
+  <h1>Juego del Bulldog Francés</h1>
+  <div class="container">
+    <img id="bulldog" src="https://media.giphy.com/media/dUONgSXYsL44vojSfk/giphy.gif" alt="Bulldog Francés">
+    <p class="message" id="message">Alegre, bienvenidos</p>
+    <!-- <button onclick="feed()">Alimentar</button> -->
+    <button onclick="play()">Jugar</button>
+    <button onclick="sleep()">Dormir</button>
   </div>
+
+  <script>
+    var bulldogImage = document.getElementById('bulldog');
+    var messageElement = document.getElementById('message');
+    var currentState = 'https://media.giphy.com/media/dUONgSXYsL44vojSfk/giphy.gif';
+
+    function changeState(state, message, duration) {
+      bulldogImage.src = state;
+      messageElement.textContent = message;
+
+      setTimeout(function() {
+        bulldogImage.src = currentState;
+        messageElement.textContent = 'Alegre, bienvenidos';
+        bulldogImage.src = 'https://media.giphy.com/media/dUONgSXYsL44vojSfk/giphy.gif';
+      }, duration);
+    }
+
+    function feed() {
+      currentState = 'https://i.imgur.com/A2cnELE.png';
+      changeState(currentState, 'Comiendo rico', 3000);
+    }
+
+    function play() {
+      currentState = 'https://media.giphy.com/media/cOntkhTxQLlMYF7grZ/giphy.gif';
+      changeState(currentState, 'Me divierto jugando', 4000);
+    }
+
+    function sleep() {
+      currentState = 'https://media.giphy.com/media/ZENEK8TjLTSiHnm5qh/giphy.gif';
+      changeState(currentState, 'Me voy a dormir', 5000);
+    }
+  </script>
 </body>
 </html>
